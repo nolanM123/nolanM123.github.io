@@ -24,14 +24,14 @@ export async function initSkills() {
         const offRight = offset.left + $card.outerWidth() > $(window).outerWidth() - 128
         
         if (offLeft) {
-            $card.find(".content").css("left", "180%");
+            $card.find(".content").css({"left": "100%"});
         } else if (offRight) {
-            $card.find(".content").css("left", "-40%");
+            $card.find(".content").css({"left": "0%"});
         }
 
     });
 
     $skillCardsContainer.on("mouseleave", ".skill-card", function() {
-        $(this).find(".content").css("left", "50%");
+        $(this).find(".content").css({"left": "50%"});
     });
 }
