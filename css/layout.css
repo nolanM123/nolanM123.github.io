@@ -45,7 +45,7 @@ section .card-container {
 }
 
 section .card-container.skill-card-container {
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
 }

@@ -24,9 +24,9 @@ export async function initSkills() {
         const offRight = offset.left + $card.outerWidth() > $(window).outerWidth() - 128
         
         if (offLeft) {
-            $card.find(".content").css("left", "100%");
+            $card.find(".content").css("left", "180%");
         } else if (offRight) {
-            $card.find(".content").css("left", "0%");
+            $card.find(".content").css("left", "-40%");
         }
 
     });
