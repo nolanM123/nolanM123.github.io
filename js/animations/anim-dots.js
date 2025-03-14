@@ -3,10 +3,10 @@ export function animDots() {
         const canvas = this;
         const ctx = canvas.getContext("2d");
 
-        const numPoints = 200;
         const maxDistance = 120;
         const lineAlphaDecay = 0.2;
 
+        let numPoints;
         let dots = [];
         let mousex = 0;
         let mousey = 0;
@@ -81,6 +81,7 @@ export function animDots() {
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width;
             canvas.height = rect.height;
+            numPoints = (rect.width * rect.height) / 4048;
 
             generatePoints();
         });
