@@ -74,6 +74,7 @@ section .card-container.organization-card-container::before {
 
 form {
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
     gap: 16px;
 
