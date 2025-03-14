@@ -1,28 +1,28 @@
-import { initEmailForm } from "./scripts/email-form.js";
+import { initHero } from "./templates/init-hero.js";
+import { initProjects } from "./templates/init-projects.js";
+import { initSkills } from "./templates/init-skills.js";
+import { initExperience } from "./templates/init-experience.js";
+import { initEducation } from "./templates/init-education.js";
 
-import { contacts, initContacts } from "./templates/init-contacts.js";
-import { projects, initProjects } from "./templates/init-projects.js";
-import { skills, initSkills } from "./templates/init-skills.js";
-import { experiences, initExperience } from "./templates/init-experience.js";
-import { educations, initEducation } from "./templates/init-education.js";
+import { animNav } from "./animations/anim-nav.js";
+import { animCard } from "./animations/anim-card.js";
+import { animDots } from "./animations/anim-dots.js";
 
-import { initNavbarAnimation } from "./animations/anim-navbar.js";
-import { initDotsAnimation } from "./animations/anim-dots.js";
-import { initCardAnimation } from "./animations/anim-card.js";
+import { initContactForm } from "./scripts/contact-form.js";
 
-$(document).ready(() => {
-    // General initalizations
-    initEmailForm();
+$(function () {
+    // Templates
+    initHero();
+    initProjects();
+    initSkills();
+    initExperience();
+    initEducation();
 
-    // Template initalziations
-    initContacts(contacts);
-    initProjects(projects);
-    initSkills(skills);
-    initExperience(experiences);
-    initEducation(educations);
+    // Animations
+    animNav();
+    animCard();
+    animDots();
 
-    // Animation Initalizations
-    initNavbarAnimation();
-    initDotsAnimation();
-    initCardAnimation();
+    // Scripts
+    initContactForm();
 });

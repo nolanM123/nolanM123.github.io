@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+
+    font-weight: inherit;
+    font-family: inherit;
+}
+
+html,
+body {
+    width: 100dvw;
+
+    overflow: hidden auto;
+
+    background-color: #fff;
+    color: #141414;
+
+    font-family: "Quicksand", sans-serif;
+}

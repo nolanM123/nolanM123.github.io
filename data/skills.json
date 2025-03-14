@@ -1,0 +1,86 @@
+[
+    {
+        "name": "HTML",
+        "experience": 5,
+        "expertise": 1.00,
+        "description": "Proficient in creating and structuring web content using HTML.",
+        "src": "./assets/images/skills/html.svg"
+    },
+    {
+        "name": "CSS",
+        "experience": 5,
+        "expertise": 0.95,
+        "description": "Experienced in styling and designing web pages with CSS.",
+        "src": "./assets/images/skills/css.svg"
+    },
+    {
+        "name": "Javascript",
+        "experience": 5,
+        "expertise": 0.88,
+        "description": "Skilled in scripting and implementing interactive features on web pages using JavaScript.",
+        "src": "./assets/images/skills/javascript.svg"
+    },
+    {
+        "name": "PHP",
+        "experience": 2,
+        "expertise": 0.80,
+        "description": "Experienced in server-side scripting and developing dynamic web applications with PHP.",
+        "src": "./assets/images/skills/php.svg"
+    },
+    {
+        "name": "Python",
+        "experience": 8,
+        "expertise": 1.00,
+        "description": "Proficient in general-purpose programming and developing web applications with Python.",
+        "src": "./assets/images/skills/python.svg"
+    },
+    {
+        "name": "R",
+        "experience": 3,
+        "expertise": 0.76,
+        "description": "Skilled in statistical analysis and data visualization with R.",
+        "src": "./assets/images/skills/r.svg"
+    },
+    {
+        "name": "MATLAB",
+        "experience": 3,
+        "expertise": 0.76,
+        "description": "Skilled in statistical analysis and data visualization with MATLAB.",
+        "src": "./assets/images/skills/matlab.svg"
+    },
+    {
+        "name": "C/C++",
+        "experience": 2,
+        "expertise": 0.63,
+        "description": "Experienced in system programming and developing performance-critical applications with C/C++.",
+        "src": "./assets/images/skills/c++.svg"
+    },
+    {
+        "name": "Cuda",
+        "experience": 1,
+        "expertise": 0.81,
+        "description": "Knowledgeable in parallel computing and GPU programming using CUDA.",
+        "src": "./assets/images/skills/cuda.svg"
+    },
+    {
+        "name": "C#",
+        "experience": 1,
+        "expertise": 0.80,
+        "description": "Experienced in developing Windows applications and games using C#.",
+        "src": "./assets/images/skills/c-sharp.svg"
+    },
+    {
+        "name": "Java",
+        "experience": 3,
+        "expertise": 0.88,
+        "description": "Skilled in object-oriented programming and application development with Java.",
+        "src": "./assets/images/skills/java.svg"
+    },
+    {
+        "name": "GDScript",
+        "experience": 2,
+        "expertise": 0.86,
+        "description": "Experienced in scripting and game development using GDScript.",
+        "src": "./assets/images/skills/godot.svg"
+    }
+]

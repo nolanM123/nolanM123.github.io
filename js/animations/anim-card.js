@@ -1,36 +1,49 @@
-export function initCardAnimation() {
-    const $cards = $(".card:not(.skill-card)");
-
+export function animCard() {
     let scrolling = false;
 
-    function onScroll() {
-        $cards.each(function() {
-            let cardTop = $(this).offset().top;
-            let scrollTop = $(window).scrollTop();
-            let windowHeight = $(window).height();
-            
-            let distanceFromCenter = cardTop - (scrollTop + windowHeight / 2) - 100;
-            let normalizedDistance;
+    function _animCard() {
+        scrolling = true;
+
+        const $cards = $(".card");
+
+        $cards.each(function () {
+            const $card = $(this);
+            const cardTop = $card.offset().top;
+            const scrollTop = $(window).scrollTop();
+            const windowHeight = $(window).height();
+
+            const distanceFromCenter = cardTop - scrollTop - (3 * windowHeight / 5);
 
             if (distanceFromCenter <= 0) {
-                normalizedDistance = 1;
+                $card.css({
+                    "transform": "none",
+                    "opacity": 1
+                });
             } else {
-                normalizedDistance = Math.max(0.4, Math.min(1, 1 - distanceFromCenter / (windowHeight / 2)));
-            }
+                const normalizedDistance = Math.max(0.1, Math.min(1, 1 - distanceFromCenter / (windowHeight / 2)));
 
-            $(this).css({
-                opacity: normalizedDistance,
-                transform: `scale(${normalizedDistance})`
-            });
+                $card.css({
+                    "transform": `scale(${normalizedDistance})`,
+                    "opacity": normalizedDistance
+                });
+            }
         });
 
         scrolling = false;
     }
 
-    $(document).on('scroll', () => {
+    $(window).on("scroll resize", () => {
         if (!scrolling) {
-            scrolling = true;
-            requestAnimationFrame(onScroll);
+            _animCard();
         }
     });
+
+    $(".skill-card-container").on({
+        mouseenter: function () {
+            $(this).css("opacity", 1);
+        },
+        mouseleave: function () {
+            _animCard();
+        }
+    }, ".skill-card");
 }

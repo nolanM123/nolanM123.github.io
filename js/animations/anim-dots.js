@@ -1,5 +1,5 @@
-export function initDotsAnimation() {
-    $(".dots-canvas").each(function () {
+export function animDots() {
+    $(".dots").each(function () {
         const canvas = this;
         const ctx = canvas.getContext("2d");
 
@@ -10,9 +10,6 @@ export function initDotsAnimation() {
         let dots = [];
         let mousex = 0;
         let mousey = 0;
-
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
 
         function generatePoints() {
             dots = [];
@@ -51,7 +48,7 @@ export function initDotsAnimation() {
             dots.forEach(dot => {
                 const dx = mousex - dot.x;
                 const dy = mousey - dot.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+                const distance = Math.sqrt(dx ** 2 + dy ** 2);
 
                 if (distance < maxDistance) {
                     const alpha = 1 - distance / maxDistance;
@@ -76,17 +73,21 @@ export function initDotsAnimation() {
 
         $(window).on("mousemove", (event) => {
             const rect = canvas.getBoundingClientRect();
-            mousex = event.clientX - rect.left;
-            mousey = event.clientY - rect.top;
+            mousex = event.pageX - rect.left;
+            mousey = event.pageY - rect.top;
         });
+        
         $(window).on("resize", () => {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
 
             generatePoints();
         });
 
-        generatePoints();
-        draw();
+        setTimeout(() => {
+            $(window).trigger("resize");
+            draw();
+        }, 100);
     });
 }

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Google",
+        "href": "#connect-section",
+        "src": "./assets/ui/google.svg"
+    },
+    {
+        "name": "Github",
+        "href": "https://github.com/nolanM123",
+        "src": "./assets/ui/github.svg"
+    },
+    {
+        "name": "LinkedIn",
+        "href": "https://www.linkedin.com/in/nolan-mcallister/",
+        "src": "./assets/ui/linkedin.svg"
+    }
+]

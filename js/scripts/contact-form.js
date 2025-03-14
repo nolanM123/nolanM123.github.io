@@ -1,9 +1,9 @@
-export function initEmailForm() {
-    $(".email-form").on("submit", function(event) {
+export function initContactForm() {
+    $("#contact-form").on("submit", function(event) {
         event.preventDefault();
         
-        const email = $(this).find("input[name='email']").val();
-        const content = $(this).find("textarea[name='content']").val();
+        const email = $("#contact-from").val();
+        const content = $("#contact-content").val();
 
         const subject = encodeURIComponent("Portfolio Inquiry");
         const body = encodeURIComponent(content + "\n\nFrom: " + email);

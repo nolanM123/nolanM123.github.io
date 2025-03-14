@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /* Base */
-@import "./base/base.css";
-@import "./base/form.css";
-@import "./base/layout.css";
-@import "./base/reset.css";
+@import "./reset.css";
+@import "./layout.css";
 
 /* Components */
-@import "./components/button.css";
-@import "./components/card.css";
-@import "./components/dots-canvas.css";
-@import "./components/link-btn.css";
+@import "./components/link.css";
 @import "./components/navbar.css";
-@import "./components/organization-card.css";
+@import "./components/card.css";
 @import "./components/project-card.css";
-@import "./components/skill-card.css";
+@import "./components/skills-card.css";
+@import "./components/organization-card.css";

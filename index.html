@@ -5,115 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolan McAllister</title>
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="module" src="./js/main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav id="navbar">
+        <div class="focus"></div>
         <a href="#hero-section">Home</a>
-        <a href="#project-section">Projects</a>
-        <a href="#skill-section">Skills</a>
+        <a href="#projects-section">Projects</a>
+        <a href="#skills-section">Skills</a>
         <a href="#experience-section">Experience</a>
         <a href="#education-section">Education</a>
-        <a href="#contacts-section">Connect</a>
-        <div class="nav-highlight"></div>
+        <a href="#connect-section">Connect</a>
     </nav>
 
-    <header id="hero-section">
-        <div class="content">
-            <img src="./images/hero-thumbnail.jpg" alt="Hero Thumbnail" class="thumbnail">
-            <h2 class="description">Hi, I'm Nolan. I'm a software engineer and full-stack developer with a
-                BSc in Computer Science from UBC. I excel in building user-centric applications and high-performance
-                frameworks. I excel with leadership skills, delivering innovative solutions and optimizing system
-                performance.</h2>
-        </div>
-        <div class="link-btn-container contacts-container"></div>
-        <canvas class="dots-canvas"></canvas>
+    <!-- Hero Section -->
+    <header id="hero-section" class="nav-section">
+        <img src="./assets/images/hero/self.png" alt="Hero Icon" class="icon">
+        <h2 class="description">
+            Hi, I'm Nolan. I'm a software engineer and full-stack developer with a BSc in Computer Science from UBC.
+            I excel in building user-centric applications and high-performance frameworks. I excel with leadership
+            skills, delivering innovative solutions and optimizing system performance.
+        </h2>
+        <div class="link-container"></div>
+        <canvas class="dots"></canvas>
     </header>
 
-    <article id="project-section">
-        <h2>My Projects</h2>
-        <div class="card-container projects-container"></div>
-    </article>
+    <!-- Projects Section -->
+    <section id="projects-section" class="nav-section">
+        <h2 class="section-title">My Projects</h2>
+        <div class="card-container project-card-container">
+            <template id="project-card-template">
+                <div class="card project-card">
+                    <div class="content">
+                        <h2 class="name">[placeholder]</h2>
+                        <h4 class="role">[placeholder]</h4>
+                        <h5 class="stack-label">Made with:</h5>
+                        <div class="stack-container"></div>
+                        <p class="description">[placeholder]</p>
+                        <ul class="achievement-list"></ul>
+                        <div class="link-container"></div>
+                    </div>
+                    <img src="#" alt="[placeholder]" class="thumbnail">
+                </div>
+            </template>
+        </div>
+    </section>
 
-    <article id="skill-section">
-        <h2>My Skills</h2>
-        <div class="card-container skills-container"></div>
-    </article>
+    <!-- Skills Section -->
+    <section id="skills-section" class="nav-section">
+        <h2 class="section-title">My Skills</h2>
+        <hr>
+        <div class="card-container skill-card-container">
+            <template id="skill-card-template">
+                <div class="card skill-card">
+                    <div class="face">
+                        <img src="#" alt="[placeholder]" class="icon">
+                        <h4 class="name">[placeholder]</h4>
+                    </div>
+                    <div class="content">
+                        <h4 class="dates">[placeholder]</h4>
+                        <div class="progress-container">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="description">[placeholder]</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
 
-    <article id="experience-section">
-        <h2>My Experience</h2>
-        <div class="card-container organizations-container experiences-container"></div>
-    </article>
+    <!-- Experience Section -->
+    <section id="experience-section" class="nav-section">
+        <h2 class="section-title">My Experience</h2>
+        <div class="card-container organization-card-container experience-card-container">
+            <template id="experience-card-template">
+                <div class="card organization-card experience-card">
+                    <div class="content">
+                        <h2 class="name">[placeholder]</h2>
+                        <h5 class="date">[placeholder]</h5>
+                        <h4 class="role">[placeholder]</h4>
+                        <ul class="achievement-list"></ul>
+                    </div>
+                    <div class="badge">
+                        <img src="./assets/ui/suitcase.svg" alt="Experience Badge">
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
 
-    <article id="education-section">
-        <h2>My Education</h2>
-        <div class="card-container organizations-container educations-container"></div>
-    </article>
+    <!-- Education Section -->
+    <section id="education-section" class="nav-section">
+        <h2 class="section-title">My Education</h2>
+        <div class="card-container organization-card-container education-card-container">
+            <template id="education-card-template">
+                <div class="card organization-card education-card">
+                    <div class="content">
+                        <h2 class="name">[placeholder]</h2>
+                        <h5 class="date">[placeholder]</h5>
+                        <h4 class="role">[placeholder]</h4>
+                        <ul class="achievement-list"></ul>
+                    </div>
+                    <div class="badge">
+                        <img src="./assets/ui/book.svg" alt="Education Badge">
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
 
-    <footer id="contacts-section">
-        <h2>My Contacts</h2>
-        <p>Please contact me directly at <a href="mailto: nolan.m.mcallister@gmail.com">nolan.m.mcallister@gmail.com</a> or through this form.</p>
-        <form action="#" method="post" class="content email-form">
-            <input type="email" name="email" id="email" placeholder="Your email" required autocomplete="off">
-            <textarea name="content" id="content" placeholder="Your message" required rows="8"></textarea>
+    <!-- Connect Section -->
+    <footer id="connect-section" class="nav-section">
+        <h2 class="section-title">My Contact</h2>
+        <p>Please contact me directly at <a href="mailto: nolan.m.mcallister@gmail.com">nolan.m.mcallister@gmail.com</a>
+            or through this form.</p>
+        <form action="#" method="post" id="contact-form">
+            <input type="email" id="contact-from" placeholder="Your email" required>
+            <textarea id="contact-content" placeholder="Your message" rows="10" required></textarea>
             <button type="submit">
-                <p>Send</p>
-                <img src="./images/icons/send-icon.svg" alt="Send Icon" class="icon">
+                <span>Send</span>
+                <img src="./assets/ui/send.svg" alt="">
             </button>
         </form>
     </footer>
 
-    <template id="link-btn-template">
-        <a href="#" class="link-btn">
-            <img src="#" alt="[Platform Name] Icon" class="icon">
-            <h4 class="name"></h4>
+    <!-- Link Template -->
+    <template id="link-template">
+        <a href="[placeholder]" class="link">
+            <img src="#" alt="[placeholder]" class="icon">
+            <h4 class="name">[placeholder]</h4>
         </a>
-    </template>
-
-    <template id="project-card-template">
-        <section class="card project-card">
-            <div class="content">
-                <h2 class="name"></h2>
-                <h4 class="role"></h4>
-                <h4 class="label">Made With:</h4>
-                <div class="tech-container"></div>
-                <p class="description"></p>
-                <ul class="achievements"></ul>
-                <div class="link-btn-container"></div>
-            </div>
-            <img src="#" alt="[Project Name] Preview" class="preview">
-        </section>
-    </template>
-
-    <template id="skill-card-template">
-        <section class="card skill-card">
-            <img src="#" alt="[Skill Name] Logo" class="icon">
-            <h3 class="name"></h3>
-            <div class="content">
-                <h4 class="experience"></h4>
-                <div class="progress-range">
-                    <div class="progress-bar"></div>
-                </div>
-                <p class="description"></p>
-            </div>
-        </section>
-    </template>
-
-    <template id="organization-card-template">
-        <section class="card organization-card">
-            <div class="badge">
-                <img src="#" alt="[Badge] Icon" class="icon">
-            </div>
-            <div class="content">
-                <h2 class="name"></h2>
-                <h4 class="role"></h4>
-                <ul class="achievements"></ul>
-                <h5 class="dates"></h5>
-            </div>
-        </section>
     </template>
 </body>
 

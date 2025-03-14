@@ -1,0 +1,153 @@
+[
+    {
+        "name": "SeedParks",
+        "role": "Sole Developer & Architect",
+        "description": "Seedparks is a lightweight, high-performance web app designed to simplify parking management for The Mustard Seed. It provides a seamless booking experience, real-time monitoring, and powerful administrative tools.",
+        "src": "./assets/images/projects/seedparks-preview.png",
+        "skills": [
+            {
+                "name": "HTML",
+                "src": "./assets/images/skills/html.svg"
+            },
+            {
+                "name": "CSS",
+                "src": "./assets/images/skills/css.svg"
+            },
+            {
+                "name": "Javascript",
+                "src": "./assets/images/skills/javascript.svg"
+            },
+            {
+                "name": "JQuery",
+                "src": "./assets/images/skills/jquery.svg"
+            },
+            {
+                "name": "Python",
+                "src": "./assets/images/skills/python.svg"
+            },
+            {
+                "name": "FastAPI",
+                "src": "./assets/images/skills/fastapi.svg"
+            },
+            {
+                "name": "MySQL",
+                "src": "./assets/images/skills/mysql.svg"
+            }
+        ],
+        "achievements": [
+            "Independently built and deployed Seedparks, now used by 800+ users to manage parking across all Mustard Seed locations.",
+            "Integrated Microsoft SSO for security, api integrations and easy login.",
+            "Built with FastAPI for speed, efficiency, and scalability.",
+            "Enabled live tracking of parking space availability.",
+            "Designed for accessibility on any device, allowing users to manage bookings on the go."
+        ],
+        "links": []
+    },
+    {
+        "name": "Discussion Forum",
+        "role": "Full Stack Developer",
+        "description": "Developed an online platform where users can register, create discussions, react, comment, and participate in various site features.",
+        "src": "./assets/images/projects/discussion-forum-preview.png",
+        "skills": [
+            {
+                "name": "HTML",
+                "src": "./assets/images/skills/html.svg"
+            },
+            {
+                "name": "CSS",
+                "src": "./assets/images/skills/css.svg"
+            },
+            {
+                "name": "Javascript",
+                "src": "./assets/images/skills/javascript.svg"
+            },
+            {
+                "name": "JQuery",
+                "src": "./assets/images/skills/jquery.svg"
+            },
+            {
+                "name": "PHP",
+                "src": "./assets/images/skills/php.svg"
+            },
+            {
+                "name": "MySQL",
+                "src": "./assets/images/skills/mysql.svg"
+            }
+        ],
+        "achievements": [
+            "Implemented a secure registration and login system with comprehensive profile management to protect user data.",
+            "Developed admin controls for efficient management of users, posts, and reactions, enhancing site moderation capabilities.",
+            "Added functionalities such as activity tracking, collapsible threads, and mobile responsiveness to improve user engagement and accessibility."
+        ],
+        "links": [
+            {
+                "name": "Github",
+                "href": "https://github.com/nolanM123/COSC_360_Project",
+                "src": "./assets/ui/github.svg"
+            }
+        ]
+    },
+    {
+        "name": "MediHelp",
+        "role": "Technical Lead",
+        "description": "Led the development of a web application that recommends over-the-counter medicine based on personalized surveys, featuring an admin interface with advanced controls and logic.",
+        "src": "./assets/images/projects/medihelp-preview.png",
+        "skills": [
+            {
+                "name": "React",
+                "src": "./assets/images/skills/react.svg"
+            },
+            {
+                "name": "NodeJS",
+                "src": "./assets/images/skills/nodejs.svg"
+            },
+            {
+                "name": "Python",
+                "src": "./assets/images/skills/python.svg"
+            },
+            {
+                "name": "FastAPI",
+                "src": "./assets/images/skills/fastapi.svg"
+            },
+            {
+                "name": "SQLite",
+                "src": "./assets/images/skills/sqlite.svg"
+            }
+        ],
+        "achievements": [
+            "Integrated data and formulas from clients' Excel prototypes into the application, ensuring accurate and reliable recommendations.",
+            "Developed a user-friendly, survey-based recommendation system that provides tailored advice based on individual needs.",
+            "Created an extensive admin page for managing activities and product information, streamlining backend operations."
+        ],
+        "links": []
+    },
+    {
+        "name": "Graceful",
+        "role": "Software Engineer",
+        "description": "Developed a web framework for building APIs with Python, inspired by FastAPI, built from scratch and utilizing Python type hints.",
+        "src": "./assets/images/projects/graceful-preview.svg",
+        "skills": [
+            {
+                "name": "Python",
+                "src": "./assets/images/skills/python.svg"
+            }
+        ],
+        "achievements": [
+            "Designed a robust API framework leveraging Python type hints for enhanced code reliability and developer productivity.",
+            "Implemented efficient error handling and validation mechanisms, ensuring a seamless and robust user experience.",
+            "Utilized async and sockets to create a high-performance, scalable architecture capable of handling concurrent requests efficiently."
+        ],
+        "links": [
+            {
+                "name": "PyPi",
+                "href": "https://pypi.org/project/graceful-web/",
+                "src": "./assets/ui/globe.svg"
+            },
+            {
+                "name": "Github",
+                "href": "https://github.com/nolanM123/graceful",
+                "src": "./assets/ui/github.svg"
+            }
+        ]
+    }
+]

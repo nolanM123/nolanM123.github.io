@@ -1,0 +1,42 @@
+[
+    {
+        "name": "The Mustard Seed",
+        "role": "Service Desk Technician",
+        "dates": "October 2024 - May 2025",
+        "achievements": [
+            "Provided IT support by troubleshooting hardware/software issues, maintaining systems and networks, managing technical tickets, and collaborating on updates to ensure seamless operations.",
+            "Trained staff on technology tools while upholding data confidentiality and security policies.",
+            "Developed internal software solutions to streamline workflows and improve efficiency.",
+            "Assisted in software deployment and integration, enhancing system functionality."
+        ]
+    },
+    {
+        "name": "Grey Eagle Resort & Casino",
+        "role": "Usher",
+        "dates": "September 2023 - January 2024",
+        "achievements": [
+            "Handled duties adeptly, efficiently resolving patron issues.",
+            "Collaborated with the team for seamless operations."
+        ]
+    },
+    {
+        "name": "College Pro",
+        "role": "Regional Manager / Window Technician",
+        "dates": "May 2022 - September 2022",
+        "achievements": [
+            "Supervised a team of 4 employees; consistently achieving and surpassing performance targets.",
+            "Provided continuous support and guidance to team members.",
+            "Delivered coaching and constructive feedback to enhance their skills and achieve performance objectives."
+        ]
+    },
+    {
+        "name": "Shoppers Drug Mart",
+        "role": "Cashier / Sales Associate",
+        "dates": "July 2021 - September 2021",
+        "achievements": [
+            "Exhibited outstanding customer service skills by warmly greeting customers.",
+            "Promptly addressed inquiries and effectively resolved complaints with professionalism and a friendly demeanor.",
+            "Managed exchanges and returns, adhering to established procedures to uphold customer satisfaction while preserving the integrity of the store's policies."
+        ]
+    }
+]
