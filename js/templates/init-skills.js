@@ -20,8 +20,8 @@ export async function initSkills() {
     $skillCardsContainer.on("mouseenter", ".skill-card", function() {
         const $card = $(this);
         const offset = $card.offset();
-        const offLeft = offset.left < 64;
-        const offRight = offset.left + $card.outerWidth() > $(window).outerWidth() - 64
+        const offLeft = offset.left < 128;
+        const offRight = offset.left + $card.outerWidth() > $(window).outerWidth() - 128
         
         if (offLeft) {
             $card.find(".content").css("left", "100%");
