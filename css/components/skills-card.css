@@ -1,7 +1,7 @@
 .skill-card {
     position: relative;
 
-    min-width: 128px;
+    width: 128px;
 }
 
 .skill-card .face {
@@ -87,8 +87,8 @@
 }
 
 @media screen and (max-width: 768px) {
-    .skill-card {    
-        min-width: 64px;
+    .skill-card {
+        width: 64px;
     }
 
     .skill-card .face .icon {
