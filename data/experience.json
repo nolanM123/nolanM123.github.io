@@ -1,6 +1,18 @@
 [
     {
         "name": "The Mustard Seed",
+        "role": "IT Systems Developer",
+        "dates": "April 2025 - Present",
+        "achievements": [
+            "Design, develop, test, and deploy software applications, ensuring clean, efficient code and integration with third-party services and cloud platforms (Salesforce, Office 365, SharePoint 365).",
+            "Analyze user requirements, translate them into technical specifications, and collaborate with team members to resolve issues and optimize solutions.",
+            "Lead stakeholder sessions, document processes, and create training materials to improve efficiency and system sustainability.",
+            "Develop custom web forms, integrate APIs, and create Power BI reports.",
+            "Manage service desk tickets, install equipment, and ensure proper system setup and support."
+        ]
+    },
+    {
+        "name": "The Mustard Seed",
         "role": "Service Desk Technician",
         "dates": "October 2024 - April 2025",
         "achievements": [
