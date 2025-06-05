@@ -1,7 +1,7 @@
 [
     {
         "name": "SeedParks",
-        "role": "Sole Developer & Architect",
+        "role": "System Developer",
         "description": "Seedparks is a lightweight, high-performance web app designed to simplify parking management for The Mustard Seed. It provides a seamless booking experience, real-time monitoring, and powerful administrative tools.",
         "src": "./assets/images/projects/seedparks-preview.png",
         "skills": [
