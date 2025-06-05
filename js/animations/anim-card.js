@@ -1,49 +1,48 @@
 export function animCard() {
-    let scrolling = false;
+    let ticking = false;
 
-    function _animCard() {
-        scrolling = true;
+    function updateCards() {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const triggerPoint = scrollTop + (3 * windowHeight) / 5;
 
-        const $cards = $(".card");
-
-        $cards.each(function () {
+        $(".card").each(function () {
             const $card = $(this);
             const cardTop = $card.offset().top;
-            const scrollTop = $(window).scrollTop();
-            const windowHeight = $(window).height();
+            const distance = triggerPoint - cardTop;
 
-            const distanceFromCenter = cardTop - scrollTop - (3 * windowHeight / 5);
-
-            if (distanceFromCenter <= 0) {
+            if (distance >= 0) {
                 $card.css({
-                    "transform": "none",
-                    "opacity": 1
+                    transform: "none",
+                    opacity: 1,
                 });
             } else {
-                const normalizedDistance = Math.max(0.1, Math.min(1, 1 - distanceFromCenter / (windowHeight / 2)));
-
+                const norm = Math.max(0.1, 1 + distance / (windowHeight / 2));
                 $card.css({
-                    "transform": `scale(${normalizedDistance})`,
-                    "opacity": normalizedDistance
+                    transform: `scale(${norm})`,
+                    opacity: norm,
                 });
             }
         });
 
-        scrolling = false;
+        ticking = false;
     }
 
+    // Use requestAnimationFrame to throttle scroll/resize events
     $(window).on("scroll resize", () => {
-        if (!scrolling) {
-            _animCard();
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateCards);
         }
     });
 
+    // Handle skill card hover to set opacity and re-animate on leave
     $(".skill-card-container").on({
-        mouseenter: function () {
+        mouseenter() {
             $(this).css("opacity", 1);
         },
-        mouseleave: function () {
-            _animCard();
-        }
+        mouseleave() {
+            updateCards();
+        },
     }, ".skill-card");
 }

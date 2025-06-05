@@ -2,93 +2,83 @@ export function animDots() {
     $(".dots").each(function () {
         const canvas = this;
         const ctx = canvas.getContext("2d");
-
-        const maxDistance = 120;
-        const lineAlphaDecay = 0.2;
-
-        let numPoints;
+        const maxDist = 120;
+        const decay = 0.2;
         let dots = [];
-        let mousex = 0;
-        let mousey = 0;
+        let mouse = { x: 0, y: 0 };
+        let numPoints;
 
-        function generatePoints() {
-            dots = [];
+        function resize() {
+            const { width, height } = canvas.getBoundingClientRect();
+            canvas.width = width;
+            canvas.height = height;
 
-            for (let i = 0; i < numPoints; i++) {
-                dots.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 1.2,
-                    vy: (Math.random() - 0.5) * 1.2,
-                });
-            }
+            numPoints = (width * height) / 4096;
+            dots = Array.from({ length: numPoints }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 1.2,
+                vy: (Math.random() - 0.5) * 1.2,
+            }));
         }
 
         function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const { width, height } = canvas;
+            const mx = mouse.x * width;
+            const my = mouse.y * height;
 
-            for (let i = 0; i < dots.length; i++) {
+            ctx.clearRect(0, 0, width, height);
+
+            dots.forEach((a, i) => {
+                // Draw lines between dots close to each other
                 for (let j = i + 1; j < dots.length; j++) {
-                    const dx = dots[i].x - dots[j].x;
-                    const dy = dots[i].y - dots[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const b = dots[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.hypot(dx, dy);
 
-                    if (distance < maxDistance) {
-                        const alpha = 1 - distance / maxDistance;
-
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * lineAlphaDecay})`;
+                    if (dist < maxDist) {
+                        ctx.strokeStyle = `rgba(255,255,255,${(1 - dist / maxDist) * decay})`;
                         ctx.beginPath();
-                        ctx.moveTo(dots[i].x, dots[i].y);
-                        ctx.lineTo(dots[j].x, dots[j].y);
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
                         ctx.stroke();
                     }
                 }
-            }
 
-            dots.forEach(dot => {
-                const dx = mousex - dot.x;
-                const dy = mousey - dot.y;
-                const distance = Math.sqrt(dx ** 2 + dy ** 2);
-
-                if (distance < maxDistance) {
-                    const alpha = 1 - distance / maxDistance;
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * lineAlphaDecay})`;
+                // Draw line from dot to mouse if close
+                const dxm = mx - a.x;
+                const dym = my - a.y;
+                const distMouse = Math.hypot(dxm, dym);
+                if (distMouse < maxDist) {
+                    ctx.strokeStyle = `rgba(255,255,255,${(1 - distMouse / maxDist) * decay})`;
                     ctx.beginPath();
-                    ctx.moveTo(dot.x, dot.y);
-                    ctx.lineTo(mousex, mousey);
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(mx, my);
                     ctx.stroke();
                 }
-            });
 
-            dots.forEach(dot => {
-                dot.x += dot.vx;
-                dot.y += dot.vy;
+                // Move dot and bounce on edges
+                a.x += a.vx;
+                if (a.x < 0 || a.x > width) a.vx *= -1;
 
-                if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
-                if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+                a.y += a.vy;
+                if (a.y < 0 || a.y > height) a.vy *= -1;
             });
 
             requestAnimationFrame(draw);
         }
 
-        $(window).on("mousemove", (event) => {
+        // Update mouse position normalized to canvas
+        $(window).on("mousemove", e => {
             const rect = canvas.getBoundingClientRect();
-            mousex = event.pageX - rect.left;
-            mousey = event.pageY - rect.top;
-        });
-        
-        $(window).on("resize", () => {
-            const rect = canvas.getBoundingClientRect();
-            canvas.width = rect.width;
-            canvas.height = rect.height;
-            numPoints = (rect.width * rect.height) / 4048;
-
-            generatePoints();
+            mouse.x = (e.pageX - rect.left) / rect.width;
+            mouse.y = (e.pageY - rect.top) / rect.height;
         });
 
-        setTimeout(() => {
-            $(window).trigger("resize");
-            draw();
-        }, 100);
+        $(window).on("resize", resize);
+
+        resize();
+        draw();
     });
 }

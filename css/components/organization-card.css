@@ -1,6 +1,5 @@
 .card.organization-card {
     position: relative;
-
     width: 40%;
 }
 
@@ -13,19 +12,18 @@
 }
 
 .organization-card .achievement-list {
-    margin-bottom: 0;
+    margin: 16px 0 0;
 }
 
 .organization-card .date {
     position: absolute;
-
     top: 50%;
 
     color: rgb(100, 100, 100);
-
     font-size: medium;
     font-weight: lighter;
-    text-wrap-mode: nowrap;
+    white-space: nowrap; /* fixed from non-standard text-wrap-mode */
+    transform: translateY(-50%);
 }
 
 .organization-card:nth-child(even) .date {
@@ -39,6 +37,7 @@
 .card.organization-card .badge {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
 
     display: flex;
     align-items: center;
@@ -54,25 +53,25 @@
 
 .organization-card:nth-child(even) .badge {
     left: calc(125% + 2px);
-
     transform: translate(-50%, -50%);
 }
 
 .organization-card:nth-child(odd) .badge {
     right: calc(125% + 2px);
-
     transform: translate(50%, -50%);
 }
 
 @media screen and (max-width: 768px) {
     .card.organization-card {
         position: static;
-        
         width: 100%;
     }
 
     .organization-card .date {
         position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 8px;
     }
 
     .organization-card .badge {

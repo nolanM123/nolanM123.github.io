@@ -3,31 +3,37 @@
     border-radius: 8px;
     padding: 32px;
     width: 100%;
+    background-color: #f9f9f9;
 
-    transition: all 0.6s ease-in-out, transform 0.1s ease-in-out;
-
-    background-color: #f5f5f5;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.1s ease-in-out;
 }
 
 .card:not(.skill-card):hover {
-    border: 1px solid rgb(200, 200, 200);
-
+    border-color: #c8c8c8;
     background-color: #ebebeb;
+    transform: translateY(-2px);
 }
 
 .card .role {
     margin-bottom: 8px;
-
+    font-weight: 600;
     color: #1478dc;
+    font-size: 17px;
 }
 
 .card .achievement-list {
     margin-bottom: 48px;
     padding-left: 20px;
+    list-style-type: disc;
 }
 
-.card .achievement-list>.achievement-item {
+.card .achievement-list > .achievement-item {
     margin-bottom: 4px;
+    line-height: 1.5;
+    color: #333;
 }
 
 @media screen and (max-width: 768px) {
