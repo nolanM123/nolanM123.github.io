@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@theme {
+	/* --- Color Palette Palettes --- */
+	--color-grey-100: #ffffff;
+	--color-grey-200: #f5f5f5;
+	--color-grey-300: #f0f0f0;
+	--color-grey-400: #a3a3a3;
+	--color-grey-600: #525252;
+	--color-grey-700: #292929;
+	--color-grey-800: #141414;
+	--color-grey-900: #0a0a0a;
+
+	/* --- Semantic Light Theme Tokens --- */
+	--color-surface-primary: var(--color-grey-200);
+	--color-surface-secondary: var(--color-grey-100);
+	--color-surface-tertiary: var(--color-grey-400);
+	--color-content-primary: var(--color-grey-700);
+	--color-content-inverse: var(--color-grey-300);
+	--color-content-muted: var(--color-grey-600);
+	--color-border-base: var(--color-grey-400);
+
+	/* --- Border Tokens --- */
+	--border-width-xs: 0.0625rem;
+	--border-width-s: 0.125rem;
+	--border-width-m: 0.25rem;
+	--border-width-l: 0.5rem;
+	--border-width-xl: 1rem;
+
+	/* --- Spacing Tokens --- */
+	--spacing-none: 0rem;
+	--spacing-4xs: 0.25rem;
+	--spacing-3xs: 0.5rem;
+	--spacing-2xs: 0.75rem;
+	--spacing-xs: 1rem;
+	--spacing-s: 1.25rem;
+	--spacing-m: 1.5rem;
+	--spacing-l: 2rem;
+	--spacing-xl: 2.5rem;
+	--spacing-2xl: 3rem;
+	--spacing-3xl: 4rem;
+	--spacing-4xl: 5rem;
+}
+
+/* --- Semantic Dark Theme Tokens --- */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-surface-primary: var(--color-grey-900);
+		--color-surface-secondary: var(--color-grey-800);
+		--color-surface-tertiary: var(--color-grey-600);
+		--color-content-primary: var(--color-grey-300);
+		--color-content-inverse: var(--color-grey-700);
+		--color-content-muted: var(--color-grey-400);
+		--color-border-base: var(--color-grey-600);
+	}
+}
+
+/* --- Global Styles --- */
+html,
+body {
+	@apply bg-surface-primary text-content-primary min-h-screen;
+}
+
+main {
+	@apply flex flex-col items-center gap-4xl;
+}

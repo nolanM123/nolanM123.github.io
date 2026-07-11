@@ -1,0 +1,21 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #F5F5F5; }
+    .grad-stop-1 { stop-color: #141414; }
+    .grad-stop-2 { stop-color: #A3A3A3; }
+
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141414; }
+      .grad-stop-1 { stop-color: #F5F5F5; }
+      .grad-stop-2 { stop-color: #A3A3A3; }
+    }
+  </style>
+  <path d="M0 0H16V16H0V0Z" class="bg" /> 
+  <path d="M12.8615 2.36364V14H10.7365L5.67401 6.67614H5.58878V14H3.12855V2.36364H5.28764L10.3104 9.68182H10.4126V2.36364H12.8615Z" fill="url(#paint0_linear_238_14)" />
+  <defs>
+    <linearGradient id="paint0_linear_238_14" x1="8" y1="0" x2="8" y2="16" gradientUnits="userSpaceOnUse">
+      <stop class="grad-stop-1" />
+      <stop offset="1" class="grad-stop-2" />
+    </linearGradient>
+  </defs>
+</svg>
