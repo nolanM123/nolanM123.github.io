@@ -56,7 +56,7 @@ const _Marquee = React.forwardRef(
 	<C extends MarqueeElement = 'div'>(
 		{
 			as = 'div' as C,
-			speed = 0.4,
+			speed = 0.2,
 			gap,
 			gapX,
 			gapY,
