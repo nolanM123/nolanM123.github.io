@@ -114,7 +114,7 @@ export const SkillCard = ({
 						<Flex
 							radius="full"
 							className={styles.progressBar()}
-							style={{ width: `${progressPercent}%` }}
+							style={{ width: isPastHalfway ? `${progressPercent}%` : '0%' }}
 						/>
 					</Flex>
 				</Flex>
