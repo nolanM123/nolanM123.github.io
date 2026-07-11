@@ -55,17 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      ```
-
-### 4. Commit and Push
-Save your files, commit the changes, and push them to your repository's `main` branch. 
-
-```bash
-git add .
-git commit -m "chore: setup github actions deployment"
-git push origin main
-```
-
-Once pushed, go to the **Actions** tab in your GitHub repository to track the live progress. When the workflow finishes successfully, a public link to your live site will appear directly in the build log.
-
-If you run into any build errors or a blank screen, let me know what **framework** you are using (like React, Vue, or Vanilla JS) and **what the exact repository name is** so I can help you debug it!
