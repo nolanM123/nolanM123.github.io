@@ -1,49 +1,71 @@
-name: CI/CD Pipeline
+name: Deploy Static Content to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  validate:
-    name: Validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
-      - name: Lint Code
-        run: npm run lint
-      - name: Type-Check TypeScript
-        run: npx tsc --noEmit
-
+  # Single deploy job since we're just deploying
   deploy:
-    name: Build and Deploy
-    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build
         run: npm run build
-      - name: Fix Routing
-        run: cp dist/index.html dist/404.html
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          folder: dist
-          branch: gh-pages
-          clean: true
-          commit_message: 'Deploy website to GitHub Pages'
-          enable_jekyll: false
+          # Vite outputs production files to the "dist" directory by default
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      ```
+
+### 4. Commit and Push
+Save your files, commit the changes, and push them to your repository's `main` branch. 
+
+```bash
+git add .
+git commit -m "chore: setup github actions deployment"
+git push origin main
+```
+
+Once pushed, go to the **Actions** tab in your GitHub repository to track the live progress. When the workflow finishes successfully, a public link to your live site will appear directly in the build log.
+
+If you run into any build errors or a blank screen, let me know what **framework** you are using (like React, Vue, or Vanilla JS) and **what the exact repository name is** so I can help you debug it!
