@@ -8,8 +8,8 @@ permissions:
   contents: write
 
 jobs:
-  # Job 1: Check code quality
   validate:
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,8 +23,8 @@ jobs:
       - name: Type-Check TypeScript
         run: npx tsc --noEmit
 
-  # Job 2: Build and deploy (Only runs if validate passes)
   deploy:
+    name: Build and Deploy
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -38,8 +38,12 @@ jobs:
         run: npm run build
       - name: Fix Routing
         run: cp dist/index.html dist/404.html
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           folder: dist
           branch: gh-pages
+          clean: true
+          commit_message: 'Deploy website to GitHub Pages'
+          enable_jekyll: false
